@@ -1,19 +1,18 @@
-definsert(arr, dim):
-    alg_count = [ 0, 0]
+>>> def insert_sort(arr, dim):
+	alg_count = [0, 0]
+	for i in range(1, dim):
+		top = arr[i]
+		j = i - 1
+		while j >= 0:
+			alg_count[0] += 1
+			if arr[j] > top:
+				alg_count[1] += 1
+				arr[j + 1] = arr[j]
+				arr[j] = top
+			j -= 1
+	return alg_count
 
-    for i in range( 1, dim):
-        temp = arr[i]
-        j =  i - 1
-        while j >= >  0:
-            alg_count[0] += 1
-            if arr[ j] > >  temp:
-                alg_count[1] += 1
-                arr[ j +  1] =  arr[ j]
-                arr[j] = temp
-            j - =  1
-    print(alg_count)
-import random
-arry = [random.randint(0, 10000) for i in range(1000)]
-print(arry)
-insert(arry, len(arry))
-print(arry)
+>>> import random
+>>> dim=30
+>>> arr = [random.randint(0, 100) for i in range(dim)]
+>>> print(insert_sort(arr, dim))

@@ -1,14 +1,17 @@
-def select_sort_stable(arr):
-    if(len(arr) == 0): return
-    for j in xrange(len(arr)):
-        min = j
-        for i in xrange(j+1, len(arr)):
-            if(arr[i] < arr[min]): min = i
-        if(min !=j):
-            value = arr[min]
-            for 1 in xrange(min,j-1,-1):
-                arr[I] = arr[I-1]
-                arr[j] = value
- random = [34,0,1,65,9]
- select_sort_stable(random)
- print(random)
+>>> def select_sort(arr, dim):
+	alg_count = [0, 0]
+	for i in range(0, dim-1):
+		min = i
+		for j in range(i + 1, dim):
+			alg_count[0] += 1
+			if arr[j] < arr[min]:
+				min = i
+		if j !=min:
+			alg_count[1] += 1
+			arr[i], arr[min] = arr[min], arr[i]
+	return alg_count
+
+>>> import random
+>>> dim = 30
+>>> arr = [random.randint(0, 100) for i in range(dim)]
+>>> print(select_sort(arr, dim))
