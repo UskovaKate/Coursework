@@ -13,5 +13,5 @@
 
 >>> import random
 >>> dim = 30
->>> arr = [random.randint(0, 100) for i in range(dim)]
+>>> arr = [random.randint(0, 10000) for i in range(dim)]
 >>> print(select_sort(arr, dim))
